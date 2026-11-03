@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node tests/session.test.cjs",
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
@@ -16,7 +16,7 @@
     "express": "^4.22.3",
     "express-partials": "^0.3.0",
     "express-session": "^1.19.0",
-    "passport": "^0.4.1",
+    "passport": "^0.7.0",
     "passport-github2": "^0.1.12"
   }
 }
