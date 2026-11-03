@@ -6,7 +6,7 @@ specifiers:
   express: ^4.22.3
   express-partials: ^0.3.0
   express-session: ^1.19.0
-  passport: ^0.4.1
+  passport: ^0.7.0
   passport-github2: ^0.1.12
 
 dependencies:
@@ -15,7 +15,7 @@ dependencies:
   express: 4.22.3
   express-partials: 0.3.0
   express-session: 1.19.0
-  passport: 0.4.1
+  passport: 0.7.0
   passport-github2: 0.1.12
 
 packages:
@@ -469,12 +469,13 @@ packages:
     engines: {node: '>= 0.4.0'}
     dev: false
 
-  /passport/0.4.1:
-    resolution: {integrity: sha512-IxXgZZs8d7uFSt3eqNjM9NQ3g3uQCW5avD8mRNoXV99Yig50vjuaez6dQK2qC0kVWPRTujxY0dWgGfT09adjYg==}
+  /passport/0.7.0:
+    resolution: {integrity: sha512-cPLl+qZpSc+ireUvt+IzqbED1cHHkDoVYMo30jbJIdOOjQ1MQYZBPiNvmi8UM6lJuOpTPXJGZQk0DtC4y61MYQ==}
     engines: {node: '>= 0.4.0'}
     dependencies:
       passport-strategy: 1.0.0
       pause: 0.0.1
+      utils-merge: 1.0.1
     dev: false
 
   /path-to-regexp/0.1.13:

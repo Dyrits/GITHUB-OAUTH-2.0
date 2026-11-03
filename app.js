@@ -51,9 +51,11 @@ app.get("/", (req, res) => { res.render("index", { user: req.user }); });
 app.get("/account", ensureAuthenticated, (req, res) => { res.render("account", { user: req.user }); });
 app.get("/login", (req, res) => { res.render("login", { user: req.user }); });
 
-app.get("/logout", (req, res) => {
-    req.logout();
-    res.redirect("/");
+app.get("/logout", (req, res, next) => {
+    req.logout((error) => {
+        if (error) { return next(error); }
+        res.redirect("/");
+    });
 });
 
 app.get("/auth/github", passport.authenticate("github", { scope: ["user"] }));

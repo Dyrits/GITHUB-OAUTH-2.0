@@ -42,3 +42,9 @@ No license file is present in this repository.
 ## Contact
 
 Dylan J. Gerrits - [GitHub](https://github.com/Dyrits)
+
+## Dependency and session verification
+
+The November 3, 2026 update uses Passport 0.7 and its required asynchronous logout callback. With Node.js 26 LTS and pnpm 7.33.7 (compatible with the existing lockfile format), run `pnpm install --frozen-lockfile` and `pnpm test`. The integration test replaces only the GitHub strategy's external authentication step with a dummy profile. It starts the real Express app locally and checks the account guard, session login, account rendering, logout, and rejection of the previous session cookie after logout. It does not use real OAuth credentials or contact GitHub.
+
+The local pnpm audit fell from two moderate findings to one moderate minimatch finding, with no new advisory IDs. Real GitHub authorization, consent, token exchange, and a deployed environment were not tested. The hard-coded demo session secret, in-memory session store, localhost callback, broad `user` scope, and GET logout route remain learning-project limitations; this app is not production-ready. No deployment or credential change was performed.
